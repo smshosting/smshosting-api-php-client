@@ -1,0 +1,17 @@
+{
+    "name": "smshosting/client-php",
+    "description": "PHP Client for Smshosting REST Api",
+    "support": {
+        "email": "info@smshosting.it"
+    },
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "mashape/unirest-php": "3.*"
+    },
+    "autoload": {
+        "classmap": ["client/src/SmsHostingClient.php"]
+    }
+}
