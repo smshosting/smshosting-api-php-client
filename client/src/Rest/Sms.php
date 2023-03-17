@@ -32,7 +32,7 @@ class Sms extends Service
 
     public function search($params = [])
     {
-        $this->url = 'search';
+        $this->uri = 'search';
         return $this->client->request('GET', $this->buildUri($this->service, $this->uri), $headers = [], $params);
     }
 }

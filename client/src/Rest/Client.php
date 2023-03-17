@@ -41,14 +41,25 @@ class Client
             $headers['Accept'] = 'application/json';
         //}
 
-        $response = $this->httpClient->request(
-            $method,
-            $uri,[
-                'auth' => [$this->authKey, $this->authSecret],
-                'headers' => $headers,
-                'query' => $params
-            ],
-        );
+        if ($method === 'POST'|| $method === 'PUT') {
+            $response = $this->httpClient->request(
+                $method,
+                $uri,[
+                    'auth' => [$this->authKey, $this->authSecret],
+                    'headers' => $headers,
+                    'form_params' => $params
+                ],
+            );
+        }else {
+            $response = $this->httpClient->request(
+                $method,
+                $uri,[
+                    'auth' => [$this->authKey, $this->authSecret],
+                    'headers' => $headers,
+                    'query' => $params
+                ],
+            );
+        }
 
         return $response;
     }
